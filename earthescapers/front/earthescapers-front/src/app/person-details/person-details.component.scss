@@ -1,0 +1,44 @@
+.container {
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--base-color);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    position: relative;
+}
+
+p {
+    padding: 0px;
+    margin: 0 2px 0 2px;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 10px 0px 10px 0;
+}
+
+
+.button {
+    position:absolute;
+    top: -15px;
+    right: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -15px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: var(--dark-grey-color);
+    transition: var(--transition-time);
+}
+
+.button:hover {
+    background-color: var(--yellow-color);
+    transition: var(--transition-time);
+}

@@ -1,0 +1,12 @@
+<div class="container">
+    <span *ngIf="person; else personNotLoaded">
+        <small>{{person.id}}</small>
+        <h1>{{person.name}} {{person.surname}}</h1>
+        <p>Wiek: {{person.age}}</p>
+        <p>Porwany przez: {{kidnappedByName}}</p>
+        <div class="button" (click)="onEditClicked()">✎</div>
+    </span>
+    <ng-template #personNotLoaded>
+        <h1>Ładowanie...</h1>
+    </ng-template>
+</div>

@@ -1,0 +1,10 @@
+<header><h1>Earthescapers 👽</h1>
+    <div class="optionMenu">
+        <a routerLink="/tribes" (click)="changeComponent(0)" 
+        [ngClass]="chosenComponent == 0 ? 'chosen' : 'notChosen'">
+        Plemiona kosmitów</a>
+        <a routerLink="/people" (click)="changeComponent(1)" 
+        [ngClass]="chosenComponent == 1 ? 'chosen' : 'notChosen'">
+        Porwani ludzie</a>
+    </div>
+</header>

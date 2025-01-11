@@ -1,0 +1,25 @@
+.container {
+    width: 600px;
+    border-radius: 20px;
+    background-color: var(--base-color);
+    padding: 30px;
+    margin: auto;
+    color: var(--white-color);
+}
+
+p {
+    padding: 0px;
+    margin: 0 2px 0 2px;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 10px 0px 10px 0;
+}
+
+.kidnappedTitle {
+    padding: 70px 0px 0px 10px;
+    margin: auto;
+    width: fit-content;
+    color: var(--base-light-color);
+}

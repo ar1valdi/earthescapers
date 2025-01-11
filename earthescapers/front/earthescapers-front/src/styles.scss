@@ -1,0 +1,7 @@
+@import 'variables';
+
+body {
+    background-color: var(--dark-color);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+}

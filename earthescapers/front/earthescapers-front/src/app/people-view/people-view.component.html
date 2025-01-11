@@ -1,0 +1,17 @@
+<div class="addButton" (click)="onAddClicked()" *ngIf="parentTribe">Dodaj porwanego</div>
+
+<div class="container" *ngIf="people != null">
+  <div *ngFor="let person of people" 
+  class="tile" 
+  [ngStyle]="{'height': showDetails ? '100px' : '40px'}"
+  >
+    <p class="name">{{ person.name }} {{person.surname}}</p>
+    <div class="peopleDetails" *ngIf="showDetails">
+        <p class="peoplePopulation">Wiek: {{ person.age }}</p>
+        <p class="peopleSpeed" *ngIf="parentTribe">Porwany przez: {{ parentTribe.name }}</p>
+    </div>
+    <div class="clicker" (click)="onDetailsClicked(person.id)"></div>
+    <div class="deleteButton button" (click)="remove(person.id)">✖</div>
+    <div class="editButton button" (click)="onEditClicked(person.id)">✎</div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="addButton" (click)="onAddClicked()">Dodaj rasę kosmitów</div>
+
+<div class="container">
+  <div *ngFor="let tribe of alienTribes" class="tile">
+    <div class="tileContent">
+      <p class="tribeName">{{ tribe.name }}</p>
+      <div class="tribeDetails">
+          <p class="tribePopulation">Populacja: {{ tribe.population }}</p>
+          <p class="tribeSpeed">Szybkość statków: {{ tribe.spaceshipSpeed }}km/s</p>
+      </div>
+    </div>
+    <div class="clicker" (click)="onDetailsClicked(tribe.id)"></div>
+    <div class="deleteButton button" (click)="remove(tribe.id)">✖</div>
+    <div class="editButton button" (click)="onEditClicked(tribe.id)">✎</div>
+  </div>
+</div>

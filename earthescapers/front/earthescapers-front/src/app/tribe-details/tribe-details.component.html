@@ -1,0 +1,21 @@
+<div class="container">
+    <span *ngIf="tribe; else tribeNotLoaded">
+        <small>{{tribe.id}}</small>
+        <h1>{{tribe.name}}</h1>
+        <p>Populacja: {{tribe.population}}</p>
+        <p>Prędkość statków: {{tribe.spaceshipSpeed}}</p>
+    </span>
+    <ng-template #tribeNotLoaded>
+        <h1>Ładowanie...</h1>
+    </ng-template>
+</div>
+
+<h1 class="kidnappedTitle">Porwani</h1>
+
+<span *ngIf="kidnappedPeople">
+    <app-people-view 
+    [people]="kidnappedPeople" 
+    [parentTribe]="tribe"
+    [showDetails]="false"
+    ></app-people-view>
+</span>

@@ -1,0 +1,35 @@
+<div *ngIf="activeFormType">
+    <div class="formBg"></div>
+    <div class="formContainer">
+        <h2>{{formTitle}}</h2>
+        <form [formGroup]="form!" (ngSubmit)="chosenSubmitMethod()">
+        <div *ngFor="let field of chosenFormFields">
+            <label [for]="field.name">{{ field.label }}</label>
+            <br>
+            <input
+            [id]="field.name"
+            [formControlName]="field.name"
+            [type]="field.type"
+            />
+
+            <div *ngIf="form!.get(field.name)?.invalid && form!.get(field.name)?.touched; else tripBreak">
+                <small *ngIf="form!.get(field.name)?.errors?.['required']">
+                    Wymagane: {{ field.label }}.
+                </small>
+                <small *ngIf="form!.get(field.name)?.errors?.['min']">
+                    {{ field.label }} musi być większe lub równe {{ form!.get(field.name)?.errors?.['min'].min }}.
+                </small>
+            </div>
+
+            <ng-template #break><br></ng-template>
+            <ng-template #tripBreak><br></ng-template>
+            <br>
+        </div>
+
+        <div class="buttons">
+            <button type="close" class="button" (click)="onClosedClicked()">Zamknij</button>
+            <button type="submit" class="button">Zatwierdź</button>
+        </div>
+        </form>
+    </div>
+</div>
